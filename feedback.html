@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/media-queries.css">
+    <link rel="stylesheet" href="css/common-styles.css">
+    <link rel="stylesheet" href="css/feedback.css">
+    <link rel="icon" type="image/x-icon" href="src/icons/ico48.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>РИО-СК - Проектная компания | Вакансии</title>
+</head>
+<body>
+    <div class="section flex flex-column">
+        <div class="section-header gray-bg">
+            <p class="section-title">ВАКАНСИИ</p>
+        </div>
+        <div class="section-content feedback-form-wrapper flex white-bg">
+            <form action="" class="feedback-form flex flex-column gray-bg">
+                <p class="feedback-form-title">Заполнение формы для соискателей</p>
+                <label for=user-name class="feedback-form-input-label">Имя<span title="Обязательное поле">*</span></label>
+                <input type="text" name="user-name" id="" class="feedback-form-input" required placeholder="Имя">
+                <label for="user-email" class="feedback-form-input-label">E-mail<span title="Обязательное поле">*</span></label>
+                <input type="email" name="user-email" id="" class="feedback-form-input" required placeholder="example@mail.ru">
+                <label for="user-phone-number" class="feedback-form-input-label">Телефон</label>
+                <input type="tel" name="user-phone-number" id="" class="feedback-form-input" placeholder="+7 (000) 000 0000">
+                <label for="user-message" class="feedback-form-input-label">Текст<span title="Обязательное поле">*</span></label>
+                <textarea name="user-message" id="" cols="30" rows="5" class="feedback-form-input" required placeholder="Текст"></textarea>
+                <div class="feeddback-form-bottom-wrapper flex flex-row">
+                    <p>Спасибо за обращение!</p>
+                    <button type="submit" class="feedback-form-submit-button button">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer class="white-bg">
+        <p class="copyright">&copy; РИО-СК 2024</p>
+    </footer>
+
+    <script src="scripts/mail.js"></script>
+</body>
+</html>
