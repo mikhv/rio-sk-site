@@ -2,34 +2,48 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="css/default.css">
-    <link rel="stylesheet" href="css/media-queries.css">
-    <link rel="stylesheet" href="css/common-styles.css">
-    <link rel="stylesheet" href="css/gallery.css">
-    <link rel="icon" type="image/x-icon" href="src/icons/ico48.ico">
+    <link rel="stylesheet" href="css/subpage_styles.css">
+    <link rel="stylesheet" href="css/gallery_styles.css">
+    <link rel="icon" type="image/x-icon" href="src/icons/favicon_48.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>РИО-СК - Проектная компания | Галерея</title>
 </head>
 <body>
-    <div id="gallery" class="section flex flex-column">
-        <div class="section-header flex flex-row gray-bg">
-            <p id="galleryTitle" class="gallery-title default-size-text"></p>
-            <div id="closeGalleryBtn" class="gallery-close-btn button"></div>
+    <header>
+        <div class="inner">
+            <a href="index.html" class="back-home-page-button-wrapper">
+                <img src="src/icons/back_button_12x24.svg" alt="Назад" class="back-home-page-button">
+            </a>
+            <p id="galleryTitle" class="header-title"></p>
         </div>
-        <div class="section-content gallery-content flex white-bg">
-            <div class="gallery-image-wrapper flex">
+    </header>
+    <main>
+        <div class="inner">
+            <div class="gallery-image-wrapper">
                 <img src="" alt="Изображение" id="galleryImage" class="gallery-image">
-                <div class="gallery-image-overlay flex flex-row">
-                    <div id="leftGalleryArrow" class="gallery-left-arrow button"></div>
-                    <div id="rightGalleryArrow" class="gallery-right-arrow button"></div>
+                <div class="gallery-buttons-wrapper">
+                    <div id="galleryPrevButton" class="gallery-button gallery-left-button">
+                        <div class="gallery-button-arrow-wrapper">
+                            <img src="src/icons/gallery_left_arrow_24x64.svg" alt="Впрерёд" class="gallery-arrow">
+                        </div>
+                    </div>
+                    <div id="galleryNextButton" class="gallery-button gallery-right-button">
+                        <div class="gallery-button-arrow-wrapper">
+                            <img src="src/icons/gallery_right_arrow_24x64.svg" alt="Впрерёд" class="gallery-arrow">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <footer class="white-bg">
-        <p class="copyright">&copy; РИО-СК 2024</p>
+    </main>
+    <footer>
+        <div class="inner">
+            <p class="copyright">&copy; РИО-СК 2024</p>
+        </div>
     </footer>
 
+    <script src="scripts/cookie.js"></script>
     <script src="scripts/data.js"></script>
     <script src="scripts/gallery.js"></script>
 </body>

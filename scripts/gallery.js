@@ -1,91 +1,40 @@
-const imageGridElemsTitles = document.querySelectorAll('.images-grid-item-title');
-const imageGridFrames = document.querySelectorAll('.images-grid-item');
+window.onload = showGallery(data.galleriesData.galleryIndex);
 
-// let galleries = {
-//     mainPath: 'src/pictures/Galleries/',
-//     subPaths: ['1/', '2/', '3/', '4/', '5/', '6/'],
-//     titles: ['ПРОИЗВОДСТВЕННЫЕ ЗДАНИЯ', 'ОБЩЕСТВЕННЫЕ ЗДАНИЯ', 'КУЛЬТОВЫЕ ЗДАНИЯ', 'ЖИЛЫЕ ЗДАНИЯ', 'РЕКОНСТРУКЦИЯ И ТЕХПЕРЕВООРУЖЕНИЕ', 'ПРОЕКТЫ ПЛАНИРОВКИ И МЕЖЕВАНИЯ'],
-//     imageFileNames: [
-//         ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg'],
-//         ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg'],
-//         ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg'],
-//         ['1.jpg', '2.jpg', '3.jpg'],
-//         ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg'],
-//         ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg']
-//     ],
-//     imageIndex: 0,
-//     galleryIndex: 0
-// }
-
-// Grid
-function imageGridFillWithContent() {
-    for (let k = 0; k < 6; k++) { 
-        imageGridElemsTitles[k].innerHTML = galleries.titles[k];
-        imageGridFrames[k].style.backgroundImage = `url(${galleries.mainPath + galleries.subPaths[k] + galleries.imageFileNames[k][0]})`;
-    }
-}
-window.onload = imageGridFillWithContent();
-
-// Gallery
 function showGallery(galleryIndex) {
-    galleries.galleryIndex = galleryIndex;
     updateTitle(galleryIndex);
     updateImage(galleryIndex, 0)
-
-    gallery.style.height = "100vh";
-}
-
-function hideGallery() {
-    galleries.galleryIndex = 0; // reset
-    galleries.imageIndex = 0; // reset
-
-    gallery.style.height = "0";
 }
 
 function updateTitle(index) {
-    galleryTitle.innerHTML = galleries.titles[index];
+    document.getElementById('galleryTitle').innerHTML = data.galleriesData.galleryTitles[index];
 }
 
 function updateImage(galleryIndex, imageIndex) {
-    console.log('Before: ' + galleries.galleryIndex + ' ' + galleries.imageIndex);
+    document.getElementById('galleryImage').src = `${data.galleriesData.mainPath + data.galleriesData.subPaths[galleryIndex] + data.galleriesData.imageFileNames[galleryIndex][imageIndex]}`;
 
-    galleryImage.src = `${galleries.mainPath + galleries.subPaths[galleryIndex] + galleries.imageFileNames[galleryIndex][imageIndex]}`;
-    
-    console.log('After: ' + galleries.galleryIndex + ' ' + galleries.imageIndex);
+    // document.getElementById('galleryTitle').innerHTML = ' | ' + (imageIndex+1);
 }
 
 function reindex() {
-    if (galleries.imageIndex < 0) {
-        galleries.galleryIndex--;
-        if (galleries.galleryIndex < 0) {
-            galleries.galleryIndex = galleries.imageFileNames.length-1;
-        }
-
-        galleries.imageIndex = galleries.imageFileNames[galleries.galleryIndex].length-1;
+    if (data.galleriesData.imageIndex < 0) {
+        data.galleriesData.imageIndex = data.galleriesData.imageFileNames[data.galleriesData.galleryIndex].length-1;
     }
 
-    if (galleries.imageIndex > galleries.imageFileNames[galleries.galleryIndex].length-1) {
-        galleries.galleryIndex++;
-        if (galleries.galleryIndex > galleries.imageFileNames.length-1) {
-            galleries.galleryIndex = 0;
-        }
-
-        galleries.imageIndex = 0;
+    if (data.galleriesData.imageIndex > data.galleriesData.imageFileNames[data.galleriesData.galleryIndex].length-1) {
+        data.galleriesData.imageIndex = 0;
     }
 }
 
-leftGalleryArrow.onclick = () => {
-    galleries.imageIndex--;
+document.getElementById('galleryPrevButton').onclick = () => {
+    data.galleriesData.imageIndex--;
     reindex();
-    updateTitle(galleries.galleryIndex);
-    updateImage(galleries.galleryIndex, galleries.imageIndex);
+    // updateTitle(data.galleriesData.galleryIndex);
+    updateImage(data.galleriesData.galleryIndex, data.galleriesData.imageIndex);
 }
 
-rightGalleryArrow.onclick = () => {
-    galleries.imageIndex++;
+document.getElementById('galleryNextButton').onclick = () => {
+    data.galleriesData.imageIndex++;
     reindex();
-    updateTitle(galleries.galleryIndex);
-    updateImage(galleries.galleryIndex, galleries.imageIndex);
+    // updateTitle(data.galleriesData.galleryIndex);
+    updateImage(data.galleriesData.galleryIndex, data.galleriesData.imageIndex);
 }
-
-closeGalleryBtn.onclick = () => {hideGallery()}

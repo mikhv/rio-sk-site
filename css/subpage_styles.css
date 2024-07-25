@@ -1,0 +1,48 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header, footer {
+  padding: 1em 2em;
+}
+
+header {
+  background-color: rgb(213, 213, 213);
+}
+
+header > .inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.back-home-page-button-wrapper {
+  margin-right: 0.5em;
+}
+
+.back-home-page-button {
+  vertical-align: middle;
+}
+
+.header-title {
+  font-size: 1.4em;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+}
+
+main > .inner {
+  flex-grow: 1;
+}
+
+footer {
+  border-top: 1px solid rgb(0, 0, 0);
+}
+
+.copyright {
+  font-size: 1.2em;
+}

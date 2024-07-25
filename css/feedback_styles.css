@@ -1,0 +1,76 @@
+main > .inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5em;
+  background-color: rgb(213, 213, 213);
+}
+
+.form-title {
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 0.45em;
+  padding-bottom: 0.55em;
+  font-size: 1.4em;
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+label {
+  margin: 0.5em 0;
+  font-size: 1.3em;
+}
+
+label span {
+  color: rgb(255, 0, 0);
+}
+
+input, textarea {
+  display: block;
+  font-family: inherit;
+  line-height: inherit;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgb(0, 0, 0);
+  opacity: 0.6;
+}
+
+input:focus, textarea:focus {
+  color: rgb(0, 0, 0);
+  outline: 1px solid rgb(0, 0, 0);
+}
+
+input {
+  padding: 0.25em 0.4em;
+  font-size: 1.2em;
+}
+
+.form-bottom-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em 0;
+}
+
+.form-bottom-wrapper p {
+  font-size: 1.2em;
+}
+
+button {
+  padding: 0.4em 0.8em;
+  font-size: 1.4em;
+  color: rgb(255, 255, 255);
+  background-color: rgb(80, 80, 80);
+  border: none;
+}
+
+button:hover {
+  background-color: rgb(35, 35, 35);
+}
