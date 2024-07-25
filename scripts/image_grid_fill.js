@@ -1,3 +1,5 @@
+window.onload = imageGridFillWithContent(6);
+
 function imageGridFillWithContent(maxCount) {
     let imageGrid = document.getElementById('experienceImageGrid');
 
