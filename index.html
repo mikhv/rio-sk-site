@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/x-icon" href="src/icons/favicon_48.ico">
-    <base href="https://mikhv.github.io/rio-sk-site/"> <!-- DELETE IT -->
+    <!-- <base href="https://mikhv.github.io/rio-sk-site/"> DELETE IT -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>РИО-СК - Проектная компания</title>
@@ -40,11 +40,11 @@
                     <a href="#quality" class="menu-link">КАЧЕСТВО</a>
                     <a href="#contacts" class="menu-link">КОНТАКТЫ</a>
                     <div class="dropdown-menu">
-                        <a id="dropdownMenuBtn" class="menu-link">ЕЩЕ</a>
+                        <a id="dropdownMenuBtn" class="menu-link dropdown-menu-toggle">ЕЩЕ<span><img src="src/icons/drop_button_indicator_24.svg" alt="Стрелка" id="dropdownMenuBtnIndicatior" class="drop-button-indicator"></span></a>
                         <div id="dropdownMenu" class="dropdown-menu-content-wrapper">
                             <div class="dropdown-menu-content">
-                                <a href="src/files/РИО-СК_2024_презентация.pptx" download class="menu-link dropdown-menu-link">СКАЧАТЬ ПРЕЗЕНТАЦИЮ</a>
-                                <a href="feedback.html" class="menu-link dropdown-menu-link">ВАКАНСИИ</a>
+                                <a href="src/files/РИО-СК_2024_презентация.pptx" download class="menu-link dropdown-menu-link">Скачать презентацию</a>
+                                <a href="feedback.html" class="menu-link dropdown-menu-link">Вакансии</a>
                             </div>
                         </div>
                     </div>
@@ -159,10 +159,11 @@
                                     <p class="bottom-contact-info-list-item">+7 (909) 677 00 22</p>
                                 </div>
                                 <div class="bottom-contact-info-list">
-                                    <p class="bottom-contact-info-list-item">info@rio-sk.ru</p>
+                                    <p class="bottom-contact-info-list-item">121165 г.Москва,   ул.Дунаевского, 4</p>
+                                    <p class="bottom-contact-info-list-item">www.rio-sk.ru</p>
                                 </div>
                                 <div class="bottom-contact-info-list">
-                                    <p class="bottom-contact-info-list-item">www.rio-sk.ru</p>
+                                    <p class="bottom-contact-info-list-item">info@rio-sk.ru</p>
                                 </div>
                             </div>
 
@@ -191,6 +192,7 @@
             const menuHeight = menu.offsetHeight;
 
             const dropdownMenuBtn = document.getElementById('dropdownMenuBtn');
+            const dropdownMenuBtnIndicatior = document.getElementById('dropdownMenuBtnIndicatior');
             const dropdownMenu = document.getElementById('dropdownMenu');
             let dropDownMenuOpened = true;
 
@@ -237,8 +239,10 @@
                 dropDownMenuOpened = dropDownMenuOpened ? false : true
 
                 if (dropDownMenuOpened) {
+                    dropdownMenuBtnIndicatior.style.transform = 'rotate(180deg)';
                     dropdownMenu.style.height = '5em';
                 } else {
+                    dropdownMenuBtnIndicatior.style.transform = 'rotate(0deg)';
                     dropdownMenu.style.height = 0;
                 }
             }

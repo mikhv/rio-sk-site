@@ -114,7 +114,7 @@ main {
   /* position: relative; */
   z-index: 100;
   width: 100%;
-  padding: 0.8em 0;
+  padding: 0.5em 0;
   background-color: rgb(255, 255, 255);
   border-bottom: 1px solid rgb(0, 0, 0);
 }
@@ -134,14 +134,26 @@ main {
   position: relative;
 }
 
+.dropdown-menu-toggle span {
+  display: inline-block;
+  margin-left: 0.2em;
+}
+
+.drop-button-indicator {
+  width: 10px;
+  height: 10px;
+  /* transform: rotate(180deg); */
+}
+
 .dropdown-menu-content-wrapper {
   position: absolute;
-  margin-top: 0.8em;
+  right: -0.65em;
+  margin-top: 0.5em;
   overflow: hidden;
 }
 
 .dropdown-menu-content {
-  padding: 0.25em 0.8em;
+  padding: 0.2em 0.65em;
   background-color: rgb(255, 255, 255);
   border-left: 1px solid rgb(0, 0, 0);
   border-bottom: 1px solid rgb(0, 0, 0);
@@ -155,7 +167,7 @@ main {
 
 .menu-link {
   white-space: nowrap;
-  font-size: 1.3em;
+  font-size: 1.15em;
 }
 
 .menu-link:hover,  .menu-link:active {
@@ -176,6 +188,8 @@ main {
 .experience-image-grid-item {
   position: relative;
   display: block;
+  /* display: flex; */
+  /* flex-direction: column; */
   flex-basis: 27em;
   filter: grayscale(80%);
   overflow: hidden;
@@ -333,7 +347,7 @@ main {
   justify-content: space-between;
   /* gap: 6em; */
   width: 100%;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -344,6 +358,7 @@ main {
 }
 
 .bottom-contact-info-list-item {
+  text-align: center;
   /* margin: 0.1em 0; */
   font-size: 1.4em;
 }
