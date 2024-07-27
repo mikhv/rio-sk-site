@@ -14,20 +14,42 @@ header {
 header > .inner {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-}
-
-.back-home-page-button-wrapper {
-  margin-right: 0.5em;
-}
-
-.back-home-page-button {
-  vertical-align: middle;
 }
 
 .header-title {
   font-size: 1.4em;
+}
+
+.back-home-page-button {
+  position: relative;
+  width: 1.8em;
+  height: 1.8em;
+  background-color: transparent;
+  opacity: 0.7;
+}
+
+.back-home-page-button::before, .back-home-page-button::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 1.5em;
+  width: 0.15em;
+  background-color: currentColor;
+}
+
+.back-home-page-button::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.back-home-page-button::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.back-home-page-button:hover {
+  opacity: 0.4;
 }
 
 main {
